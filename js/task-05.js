@@ -1,11 +1,13 @@
-const textInput = document.querySelector('#name-input');
-const textOutput = document.querySelector('#name-output');
+const myInput = document.querySelector('#name-input' );
+const mySpan = document.querySelector('#name-output');
 
-textInput.addEventListener('input', handleInputChange);
+myInput.addEventListener('input', newInput);
 
-function handleInputChange(event) {
-  textOutput.textContent = event.currentTarget.value;
-  if (event.currentTarget.value.trim() === '') {
-    textOutput.textContent = 'Anonymous';
-  }
+function newInput(e) {
+    //console.log(e.currentTarget);
+    mySpan.textContent = e.currentTarget.value;
+
+    if (e.currentTarget.value === "") {
+        mySpan.textContent = 'Anonymous'
+    }
 }
