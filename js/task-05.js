@@ -1,18 +1,14 @@
-const refs = {
-    input: document.querySelector('input#validation-input'),
-    output: document.querySelector('span#name-output'),
-};
+const nameInput = document.querySelector("#name-input");
+console.log(nameInput);
 
-refs.input.addEventListener('blur', onInputBlur);
+const nameOutput = document.querySelector("#name-output");
+// console.log(nameOutput.innerText);
+console.log(nameInput.value);
 
-function onInputBlur(event) {
-
-    if (event.currentTarget.value.length === Number(refs.input.getAttribute('data-length'))) {
-        refs.input.classList.add('valid');
-        refs.input.classList.remove('invalid');
-    } else {
-        refs.input.classList.add('invalid');
-        refs.input.classList.remove('valid');
-    }
-    
-}
+nameInput.addEventListener("input", (event) => {
+  if (event.currentTarget.value) {
+    nameOutput.innerText = event.currentTarget.value;
+  } else {
+    nameOutput.innerText = "Anonymous";
+  }
+});
